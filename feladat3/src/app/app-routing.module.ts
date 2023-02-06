@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HumorComponent } from './humor/humor.component';
+import { ScifiComponent } from './scifi/scifi.component';
 
-export const routes: Routes = [];
+const appRoutes: Routes = [
+  { path: 'scifi', component: ScifiComponent },
+  { path: 'humor', component: HumorComponent },
+  { path: '', redirectTo: '/scifi', pathMatch: 'full' }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
-export class AppRoutingModule { }
+export class AppModule { }
